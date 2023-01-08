@@ -128,7 +128,7 @@ const CreatePin = ({ user }) => {
                   className="absolute bottom-3 right-3 p-3 rounded-full bg-white text-xl cursor-pointer outline-none hover:shadow-md transition-all duration-500 ease-in-out"
                   onClick={() => setImageAsset(null)}
                 >
-                  <MdDelete />
+                  <MdDelete/>
                 </button>
               </div>
                 )}
