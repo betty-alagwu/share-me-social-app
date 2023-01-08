@@ -30,12 +30,12 @@ const Pin = ({ pin }) => {
 
   // alreadySaved = alreadySaved?.length > 0 ? alreadySaved : [];
 
-  const savePin = (id) => {
+  const savePin = (_id) => {
     if (!alreadySaved) {
       setSavingPost(true);
 
       client
-        .patch(id)
+        .patch(_id)
         .setIfMissing({ save: [] })
         .insert('after', 'save[-1]', [{
           _key: uuidv4(),
@@ -102,7 +102,7 @@ const Pin = ({ pin }) => {
                   type="button"
                   className="bg-red-500 opacity-70 hover:opacity-100 text-white font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none"
                 >
-                  {pin?.save?.length} {savingPost ? "Saving" : "Save"}
+                  {pin?.save?.length} {savingPost ? "Saving..." : "Save"}
                 </button>
               )}
             </div>
@@ -116,18 +116,18 @@ const Pin = ({ pin }) => {
                 >
                   <BsFillArrowUpRightCircleFill />
                   {destination.length > 15
-                    ? `${destination.slice(0, 15)}...`
+                    ? `${destination.slice(0, 10)}...`
                     : destination}
                 </a>
               )}
-              {postedBy?._id === user.googleId && (
+              {postedBy?._id !== user?.googleId && (
                 <button
                   type="button"
                   onClick={(e) => {
                     e.stopPropagation();
                     deletePin(_id);
                   }}
-                  className="bg-white p-2 opacity-70 hover:opacity-100 text-dark font-bold px-5 py-1 text-base rounded-3xl hover:shadow-md outline-none"
+                  className="bg-white p-2 opacity-70 hover:opacity-100 text-dark font-bold px-5 py-2 text-base rounded-3xl hover:shadow-md outline-none"
                 >
                   <AiTwotoneDelete />
                 </button>
