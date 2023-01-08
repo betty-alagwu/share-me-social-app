@@ -92,7 +92,7 @@ const CreatePin = ({ user }) => {
             )}
             {
               wrongImageType && (
-                <p>It&apos;s wrong file type.</p>
+                <p> wrong file type.</p>
               )
             }
             {!imageAsset ? (
@@ -105,9 +105,8 @@ const CreatePin = ({ user }) => {
                     </p>
                     <p className="text-lg">Click to upload</p>
                   </div>
-
                   <p className="mt-32 text-gray-400">
-                    Recommendation: Use high-quality JPG, JPEG, SVG, PNG, GIF or TIFF less than 20MB
+                    Recommendation: Use high-quality JPG, JPEG, SVG, PNG, GIF or TIFF less than 20 MB
                   </p>
                 </div>
                 <input
@@ -132,8 +131,8 @@ const CreatePin = ({ user }) => {
                   <MdDelete />
                 </button>
               </div>
-                      )}
-                      {error ? <p className='text-red-500'>{ error}</p> : null}
+                )}
+                {error ? <p className='text-red-500'>{ error}</p> : null}
           </div>
         </div>
 
