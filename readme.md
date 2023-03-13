@@ -16,7 +16,7 @@ ShareMe Social App is a website project designed to allow users to share interes
 - Easy-to-use sharing tools
 - User profiles 
 - Secure data storage and backup
-- 
+
 
 ## General setup
 
