@@ -4,7 +4,7 @@
 <hr />
 </div>
 
-ShareMe Social App is a website project designed to allow users to share interesting images with their friends and family. The website includes various features such as the ability to  share posts, comment on posts, like and save posts.
+ShareMe Social App is a website project designed to allow users to share interesting images with their friends and family. The website includes various features such as the ability to  share posts, comment on posts, download posts, and save posts.
 
 
 <br/>
@@ -14,8 +14,9 @@ ShareMe Social App is a website project designed to allow users to share interes
 - Google OAuth login integration
 - User-friendly interface
 - Easy-to-use sharing tools
-- User profiles with customizable settings
+- User profiles 
 - Secure data storage and backup
+- 
 
 ## General setup
 
