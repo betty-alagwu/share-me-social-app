@@ -5,31 +5,27 @@ import { FcGoogle } from "react-icons/fc";
 import shareVideo from "../assets/share.mp4";
 import logo from "../assets/logowhite.png";
 
-
 import { client } from "../client";
-
-
 
 const Login = () => {
   const navigate = useNavigate();
   const responseGoogle = (response) => {
-    localStorage.setItem('user', JSON.stringify(response.profileObj))
+    localStorage.setItem("user", JSON.stringify(response.profileObj));
     // destructuring the response object to get the user data
     const { name, googleId, imageUrl } = response.profileObj;
 
     // creating the user a new sanity document and saving data to the database
-    
+
     const doc = {
       _id: googleId,
-      _type: 'user',
+      _type: "user",
       userName: name,
       image: imageUrl,
     };
-    client.createIfNotExists (doc).then(() => {
-      navigate('/', { replace: true })
-    })
-  }
-
+    client.createIfNotExists(doc).then(() => {
+      navigate("/", { replace: true });
+    });
+  };
 
   return (
     <div className="flex justify-start items-center flex-col h-screen">
@@ -50,7 +46,7 @@ const Login = () => {
           <div className="shadow-2xl">
             <GoogleLogin
               clientId={process.env.REACT_APP_GOOGLE_API_TOKEN}
-              redirectUri="https://shareme-socials.netlify.app/login"
+              redirectUri={process.env.REACT_APP_GOOGLE_REDIRECT_URI}
               render={(renderProps) => (
                 <button
                   type="button"
