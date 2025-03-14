@@ -27,20 +27,8 @@ const CreatePin = ({ user }) => {
       setWrongImageType(false);
         setLoading(true);
         setError(undefined)
-      client.assets
-        .upload('image', selectedFile, { contentType: selectedFile.type, filename: selectedFile.name })
-        .then((document) => {
-          setImageAsset(document);
-          setLoading(false);
-        })
-          .catch((error) => {
-              setLoading(false);
-              setError(error.message || 'Something went wrong. Please try again.')
-          console.log('Upload failed:', error.message);
-        });
+      
     } else {
-      setLoading(false);
-      setWrongImageType(true);
     }
   };
 
