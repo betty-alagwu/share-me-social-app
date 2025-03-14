@@ -33,14 +33,8 @@ const CreatePin = ({ user }) => {
           setImageAsset(document);
           setLoading(false);
         })
-          .catch((error) => {
-              setLoading(false);
-              setError(error.message || 'Something went wrong. Please try again.')
-          console.log('Upload failed:', error.message);
-        });
+          
     } else {
-      setLoading(false);
-      setWrongImageType(true);
     }
   };
 
