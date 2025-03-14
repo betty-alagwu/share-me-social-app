@@ -35,7 +35,7 @@ const UserProfile = () => {
     client.fetch(query).then((data) => {
       setUser(data[0]);
     });
-  }, [userId]);
+  }, []);
 
   useEffect(() => {
     if (filter === "Created") {
@@ -47,11 +47,9 @@ const UserProfile = () => {
     } else {
       const savedPinsQuery = userSavedPinsQuery(userId);
 
-      client.fetch(savedPinsQuery).then((data) => {
-        setPins(data);
-      });
+    
     }
-  }, [filter, userId]);
+  }, []);
 
   const logout = () => {
     localStorage.clear();
