@@ -27,7 +27,8 @@ const CreatePin = ({ user }) => {
       setWrongImageType(false);
         setLoading(true);
         setError(undefined)
-      
+
+
     } else {
     }
   };

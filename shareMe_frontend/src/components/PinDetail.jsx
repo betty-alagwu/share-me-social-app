@@ -34,18 +34,13 @@ const PinDetail = ({ user }) => {
   const addComment = () => {
     if (comment) {
       setAddingComment(true);
-
-      client
-        .patch(pinId)
-        .setIfMissing({ comments: [] })
-        .insert('after', 'comments[-1]', [{ comment, _key: uuidv4(), postedBy: { _type: 'postedBy', _ref: user._id } }])
-        .commit()
       
     }
   };
 
-
-
+        
+    }
+  };
   if (!pinDetail) {
     return (
       <Spinner message="Loading pin" />
