@@ -32,6 +32,7 @@ const UserProfile = () => {
 
   useEffect(() => {
     const query = userQuery(userId);
+   
     client.fetch(query).then((data) => {
       setUser(data[0]);
     });
@@ -47,7 +48,6 @@ const UserProfile = () => {
     } else {
       const savedPinsQuery = userSavedPinsQuery(userId);
 
-    
     }
   }, []);
 
